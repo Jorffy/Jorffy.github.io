@@ -37,7 +37,7 @@
 <meta property="og:image" content="http://example.com/images/MSDtasks/DIP_2023.jpg">
 <meta property="og:image" content="http://example.com/images/MSDtasks/dataset_result.jpg">
 <meta property="article:published_time" content="2023-09-04T03:11:36.000Z">
-<meta property="article:modified_time" content="2024-01-25T17:16:18.191Z">
+<meta property="article:modified_time" content="2024-01-25T18:08:04.480Z">
 <meta property="article:author" content="SCNU_WQF">
 <meta property="article:tag" content="MultiModal">
 <meta property="article:tag" content="Sarcasm Detection">
@@ -238,7 +238,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-01-26 01:16:18" itemprop="dateModified" datetime="2024-01-26T01:16:18+08:00">2024-01-26</time>
+                <time title="修改时间：2024-01-26 02:08:04" itemprop="dateModified" datetime="2024-01-26T02:08:04+08:00">2024-01-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,7 +285,7 @@
         <p>2019-2023年来，<strong>多模态嘲讽检测（Multi-Modal Sarcasm Detection，MSD）</strong>任务收到广泛关注，出现了一系列优秀的模型。<br>HFM 设计了一个分层融合模型来组合来自两种模态的信息，并提出了一个有公信力、较公平权威的基于 Twitter 的多模态讽刺检测数据集，为后续对 MSD 的研究提供了基础。D&amp;R Net 使用语义关联上下文来查找讽刺线索。Att-BERT 通过自注意力机制融合视觉和文本嵌入。在 InCrossMGs 引入了一个图网络来描述图像文本对。CMGCN 通过跨模态图卷积网络构建区域和单词之间的连接。HKE 挖掘外部知识以构建原子级一致性和组合级一致性分层框架。MILNet 利用 OCR 辅助图像检测，提出相互增强不协调学习网络。DIP 提出双重感知网络，从事实和情感层面学习讽刺信息。</p>
 <span id="more"></span>
 
-<h2 id="HFM-Cai-et-al-2019"><a href="#HFM-Cai-et-al-2019" class="headerlink" title="HFM [Cai et al. 2019]"></a>HFM [<a href="#cai2019hfm">Cai <em>et al</em>. 2019</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://aclanthology.org/P19-1239/">Multi-Modal Sarcasm Detection in Twitter with Hierarchical Fusion Model</a><br>标题：利用层次融合模型检测 Twitter 中的多模态讽刺语言<br>作者：Yitao Cai, Huiyu Cai, Xiaojun Wan（北京大学）<br>发表地点：ACL 2019</p>
+<h2 id="HFM-Cai-et-al-2019"><a href="#HFM-Cai-et-al-2019" class="headerlink" title="HFM [Cai et al. 2019]"></a>HFM [<a href="#cai2019hfm">Cai <em>et al</em>. 2019</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://aclanthology.org/P19-1239/">Multi-Modal Sarcasm Detection in Twitter with Hierarchical Fusion Model</a><br>标题：利用层次融合模型检测 Twitter 中的多模态讽刺语言<br>作者：Yitao Cai（北京大学）, Huiyu Cai, Xiaojun Wan<br>发表地点：ACL 2019</p>
 <p>摘要：<br>讽刺是一种微妙的语言形式，是人们表达与暗示相反的一种表达手法。以前的讽刺检测工作集中在文本上。然而，越来越多的社交媒体平台（如 Twitter）允许用户创建多模态信息，包括文本、图片和视频。仅基于文本来检测多模态信息中的讽刺是不够的。在本文中，我们将重点研究 Twitter 中由文本和图片组成的推文的多模态讽刺检测。我们将<strong>文本特征</strong>、<strong>图像特征</strong>和<strong>图像属性</strong>作为三种模态，并提出了一种多模态层次融合模型来完成这项任务。我们的模型首先提取图像特征和属性特征，然后利用属性特征和双向 LSTM 网络来提取文本特征。然后重建三种模式的特征，并将其融合为一个特征向量用于预测。<strong>我们创建了一个基于 Twitter 的多模态讽刺检测数据集</strong>。数据集上的评估结果证明了我们提出的模型的有效性以及三种模态的实用性。</p>
 <p>HFM 整体框架：</p>
 <div align=center>
@@ -321,21 +321,21 @@
 <td align="center">2409</td>
 </tr>
 </tbody></table>
-<h2 id="D-amp-R-Net-Xu-et-al-2020"><a href="#D-amp-R-Net-Xu-et-al-2020" class="headerlink" title="D&amp;R Net [Xu et al. 2020]"></a>D&amp;R Net [<a href="#xu2020drnet">Xu <em>et al</em>. 2020</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://aclanthology.org/2020.acl-main.349/">Reasoning with Multimodal Sarcastic Tweets via Modeling Cross-Modality Contrast and Semantic Association</a><br>标题：通过建模跨模态对比和语义关联来推理多模态讽刺推文<br>作者：Nan Xu, Zhixiong Zeng, Wenji Mao（中国科学院&#x2F;中国科学院大学）<br>发表地点：ACL 2020</p>
+<h2 id="D-amp-R-Net-Xu-et-al-2020"><a href="#D-amp-R-Net-Xu-et-al-2020" class="headerlink" title="D&amp;R Net [Xu et al. 2020]"></a>D&amp;R Net [<a href="#xu2020drnet">Xu <em>et al</em>. 2020</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://aclanthology.org/2020.acl-main.349/">Reasoning with Multimodal Sarcastic Tweets via Modeling Cross-Modality Contrast and Semantic Association</a><br>标题：通过建模跨模态对比和语义关联来推理多模态讽刺推文<br>作者：Nan Xu（中国科学院&#x2F;中国科学院大学）, Zhixiong Zeng, Wenji Mao<br>发表地点：ACL 2020</p>
 <p>摘要：<br>讽刺是一种复杂的语言现象，用来表达与一个人真正意思相反的东西。随着社交媒体的快速发展，多模态讽刺推文被广泛发布在各种社交平台上。在多模态语境中，讽刺不再是一种纯粹的语言现象，并且由于社交媒体短文本的性质，相反的情况更经常通过跨模态表达表现出来。因此，传统的基于文本的方法不足以检测多模态讽刺。为了对多模态讽刺推文进行推理，在本文中，我们提出了一种<strong>在相关上下文中对跨模态对比进行建模</strong>的新方法。我们的方法通过构建分解和关系网络（D&amp;R Net）来模拟跨模态对比和语义关联。分解网络表示图像和文本之间的共性和差异性，关系网络对跨模态上下文中的语义关联进行建模。在公共数据集上的实验结果证明了该模型在多模态讽刺检测中的有效性。</p>
 <p>D&amp;R Net 整体框架：</p>
 <div align=center>
 <img src="/../images/MSDtasks/D&RNet_2020.jpg" width="85%" height="85%" />
 </div>
 
-<h2 id="Att-BERT-Pan-et-al-2020"><a href="#Att-BERT-Pan-et-al-2020" class="headerlink" title="Att-BERT [Pan et al. 2020]"></a>Att-BERT [<a href="#pan2020attbert">Pan <em>et al</em>. 2020</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://aclanthology.org/2020.findings-emnlp.124/">Modeling Intra and Inter-modality Incongruity for Multi-Modal Sarcasm Detection</a><br>标题：多模态讽刺检测的模态内和模态间不协调建模<br>作者：Hongliang Pan, Zheng Lin, Peng Fu, Yatao Qi, Weiping Wang（中国科学院）<br>发表地点：EMNLP 2020</p>
+<h2 id="Att-BERT-Pan-et-al-2020"><a href="#Att-BERT-Pan-et-al-2020" class="headerlink" title="Att-BERT [Pan et al. 2020]"></a>Att-BERT [<a href="#pan2020attbert">Pan <em>et al</em>. 2020</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://aclanthology.org/2020.findings-emnlp.124/">Modeling Intra and Inter-modality Incongruity for Multi-Modal Sarcasm Detection</a><br>标题：多模态讽刺检测的模态内和模态间不协调建模<br>作者：Hongliang Pan（中国科学院）, Zheng Lin, Peng Fu, Yatao Qi, Weiping Wang<br>发表地点：EMNLP 2020</p>
 <p>摘要：<br>讽刺是当今社交媒体平台（如 Twitter 和 Reddit）中普遍存在的现象。这些平台允许用户创建多模式消息，包括文本、图像和视频。现有的多模态讽刺检测方法要么简单地将多模态的特征连接起来，要么以设计的方式融合多模态信息。然而，他们忽略了讽刺话语中的不协调性，这种不协调性通常表现在模态之间或模态内部。受此启发，我们提出了一个<strong>基于BERT架构</strong>的模型，该模型专注于多模态讽刺检测的<strong>模态内部和模态间不协调</strong>。具体来说，我们受到<strong>自我注意力机制</strong>的启发，并设计了模态间注意力来捕捉模态间的不协调。此外，还应用了共同注意力机制来模拟文本中的矛盾。然后使用不协调信息进行预测。实验结果表明，我们的模型在公共多模态讽刺检测数据集上实现了最先进的性能。</p>
 <p>Att-BERT 整体框架：</p>
 <div align=center>
 <img src="/../images/MSDtasks/AttBERT_2020.jpg" width="85%" height="85%" />
 </div>
 
-<h2 id="InCrossMGs-Liang-et-al-2021"><a href="#InCrossMGs-Liang-et-al-2021" class="headerlink" title="InCrossMGs [Liang et al. 2021]"></a>InCrossMGs [<a href="#liang2021incrossmgs">Liang <em>et al</em>. 2021</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://dl.acm.org/doi/abs/10.1145/3474085.3475190">Multi-Modal Sarcasm Detection with Interactive In-Modal and Cross-Modal Graphs</a><br>标题：使用交互式模态内和跨模态图进行多模态讽刺检测<br>作者：Bin Liang, Chenwei Lou, Xiang Li, Lin Gui, Min Yang, Ruifeng Xu（哈尔滨工业大学）<br>发表地点：MM 2021</p>
+<h2 id="InCrossMGs-Liang-et-al-2021"><a href="#InCrossMGs-Liang-et-al-2021" class="headerlink" title="InCrossMGs [Liang et al. 2021]"></a>InCrossMGs [<a href="#liang2021incrossmgs">Liang <em>et al</em>. 2021</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://dl.acm.org/doi/abs/10.1145/3474085.3475190">Multi-Modal Sarcasm Detection with Interactive In-Modal and Cross-Modal Graphs</a><br>标题：使用交互式模态内和跨模态图进行多模态讽刺检测<br>作者：Bin Liang（哈尔滨工业大学）, Chenwei Lou, Xiang Li, Lin Gui, Min Yang, Ruifeng Xu<br>发表地点：MM 2021</p>
 <p>摘要：<br>讽刺是一种奇特的形式和复杂的语言行为，用于表达某人隐含的情感表达的不协调性，这在社交媒体平台上是一种普遍现象。与纯粹基于文本的讽刺检测相比，多模态讽刺检测更适合快速增长的社交媒体平台，人们有兴趣创建多模态信息。在关注 Twitter 上由文本和图像组成的推文的多模态讽刺检测时，提高多模态讽刺检测性能的重要线索演变为如何确定文本和图像之间的不协调关系。本文从<strong>新的角度</strong>研究了多模态讽刺检测，通过为每个多模态样本构建<strong>异构模态和跨模态图（InCrossMGs）</strong>，确定特定模态内和不同模态之间的情感不一致。在此基础上，我们探索了一种<strong>交互式图卷积网络（GCN）</strong>结构，以共同和交互的方式学习模态内图和跨模态图的不协调关系，以确定讽刺检测中的重要线索。实验结果表明，所提模型在多模态讽刺检测中取得了较好的性能。</p>
 <p>InCrossMGs 整体框架：</p>
 <div align=center>
@@ -343,7 +343,7 @@
 </div>
 
 
-<h2 id="CMGCN-Liang-et-al-2022"><a href="#CMGCN-Liang-et-al-2022" class="headerlink" title="CMGCN [Liang et al. 2022]"></a>CMGCN [<a href="#liang2022cmgcn">Liang <em>et al</em>. 2022</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://aclanthology.org/2022.acl-long.124/">Multi-Modal Sarcasm Detection via Cross-Modal Graph Convolutional Network</a><br>标题：基于跨模态图卷积网络的多模态讽刺检测<br>作者：Bin Liang, Chenwei Lou, Xiang Li, Min Yang, Lin Gui, Yulan He, Wenjie Pei, Ruifeng Xu（哈尔滨工业大学）<br>发表地点：ACL 2022</p>
+<h2 id="CMGCN-Liang-et-al-2022"><a href="#CMGCN-Liang-et-al-2022" class="headerlink" title="CMGCN [Liang et al. 2022]"></a>CMGCN [<a href="#liang2022cmgcn">Liang <em>et al</em>. 2022</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://aclanthology.org/2022.acl-long.124/">Multi-Modal Sarcasm Detection via Cross-Modal Graph Convolutional Network</a><br>标题：基于跨模态图卷积网络的多模态讽刺检测<br>作者：Bin Liang（哈尔滨工业大学）, Chenwei Lou, Xiang Li, Min Yang, Lin Gui, Yulan He, Wenjie Pei, Ruifeng Xu<br>发表地点：ACL 2022</p>
 <p>摘要：<br>随着在线发布多模态信息的日益普及，最近已经开展了许多利用文本和视觉信息进行多模态讽刺检测的研究。在本文中，我们通过为每个实例构建一个<strong>跨模态图</strong>来明确地绘制文本和视觉模态之间的反讽关系，从新的角度研究了多模态讽刺检测。具体来说，我们首先检测与图像模态描述配对的对象，从而能够学习重要的视觉信息。然后，以对象的描述为桥梁，确定图像模态的对象与文本模态的上下文词之间关联的重要性，从而为每个多模态实例构建跨模态图。此外，我们设计了一个<strong>跨模态图卷积网络</strong>来理解多模态讽刺检测模态之间的不协调关系。大量的实验结果和深入分析表明，该模型在多模态讽刺检测方面取得了最先进的性能。</p>
 <p>CMGCN 整体框架：</p>
 <div align=center>
@@ -351,7 +351,7 @@
 </div>
 
 
-<h2 id="HKE-Liu-et-al-2022"><a href="#HKE-Liu-et-al-2022" class="headerlink" title="HKE [Liu et al. 2022]"></a>HKE [<a href="#liu2022hke">Liu <em>et al</em>. 2022</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://aclanthology.org/2022.emnlp-main.333/">Towards Multi-Modal Sarcasm Detection via Hierarchical Congruity Modeling with Knowledge Enhancement</a><br>标题：基于知识增强的层次一致性建模的多模态讽刺检测<br>作者：Hui Liu, Wenya Wang, Haoliang Li（香港城市大学）<br>发表地点：EMNLP 2022</p>
+<h2 id="HKE-Liu-et-al-2022"><a href="#HKE-Liu-et-al-2022" class="headerlink" title="HKE [Liu et al. 2022]"></a>HKE [<a href="#liu2022hke">Liu <em>et al</em>. 2022</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://aclanthology.org/2022.emnlp-main.333/">Towards Multi-Modal Sarcasm Detection via Hierarchical Congruity Modeling with Knowledge Enhancement</a><br>标题：基于知识增强的层次一致性建模的多模态讽刺检测<br>作者：Hui Liu（香港城市大学）, Wenya Wang, Haoliang Li<br>发表地点：EMNLP 2022</p>
 <p>摘要：<br>讽刺是一种语言现象，表明字面意思和隐含意图之间存在差异。由于其复杂的性质，通常很难从文本本身中检测到它。因此，多模态讽刺检测在学术界和工业界都受到了越来越多的关注。然而，大多数现有技术只模拟了文本输入与其伴随图像之间的原子级不一致，而忽略了两种模式的更复杂的组合。此外，他们忽略了<strong>外部知识</strong>中包含的丰富信息，例如图像标题。在本文中，我们通过探索基于多头交叉注意力的<strong>原子级一致性</strong>和基于图神经网络的<strong>组合级一致性</strong>，提出了一种新的讽刺检测层次框架，其中低一致性的帖子可以被识别为讽刺。此外，我们利用各种知识资源的效果进行讽刺检测。基于 Twitter 的公共多模态讽刺检测数据集的评估结果验证了所提模型的优越性。</p>
 <p>HKE 整体框架：</p>
 <div align=center>
@@ -359,14 +359,14 @@
 </div>
 
 
-<h2 id="MILNet-Qiao-et-al-2023"><a href="#MILNet-Qiao-et-al-2023" class="headerlink" title="MILNet [Qiao et al. 2023]"></a>MILNet [<a href="#qiao2023milnet">Qiao <em>et al</em>. 2023</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/26138">Mutual-Enhanced Incongruity Learning Network for Multi-Modal Sarcasm Detection</a><br>标题：面向多模态讽刺检测的相互增强不协调学习网络<br>作者：Yang Qiao, Liqiang Jing, Xuemeng Song, Xiaolin Chen, Lei Zhu, Liqiang Nie（山东大学）<br>发表地点：AAAI 2023</p>
+<h2 id="MILNet-Qiao-et-al-2023"><a href="#MILNet-Qiao-et-al-2023" class="headerlink" title="MILNet [Qiao et al. 2023]"></a>MILNet [<a href="#qiao2023milnet">Qiao <em>et al</em>. 2023</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/26138">Mutual-Enhanced Incongruity Learning Network for Multi-Modal Sarcasm Detection</a><br>标题：面向多模态讽刺检测的相互增强不协调学习网络<br>作者：Yang Qiao（山东大学）, Liqiang Jing, Xuemeng Song, Xiaolin Chen, Lei Zhu, Liqiang Nie<br>发表地点：AAAI 2023</p>
 <p>摘要：<br>讽刺是一种复杂的语言现象，在当今的社交媒体平台上很普遍。多模态讽刺检测旨在识别具有多模态信息（即文本和图像）的给定样本是否具有讽刺意味。这项任务的关键在于在同一上下文中捕捉模态间和模态内的不协调。尽管现有方法取得了令人信服的成功，但它们受到从整个图像和文本中提取的不相关信息的干扰，或者由于输入不完整而忽略了一些重要信息。为了解决这些局限性，我们提出了一种用于多模态讽刺检测的相互增强不协调学习网络，名为 MILNet。特别是，我们设计了一个<strong>局部语义引导的不协调学习模块</strong>和一个<strong>全局不协调学习模块</strong>。此外，我们还引入了一个相互增强模块，以利用两个模块之间的底层一致性来提升性能。在广泛使用的数据集上进行的大量实验证明了我们的模型优于尖端方法。</p>
 <p>MILNet 整体框架：</p>
 <div align=center>
 <img src="/../images/MSDtasks/MILNet_2023.jpg" width="85%" height="85%" />
 </div>
 
-<h2 id="DIP-Wen-et-al-2023"><a href="#DIP-Wen-et-al-2023" class="headerlink" title="DIP [Wen et al. 2023]"></a>DIP [<a href="#wen2023dip">Wen <em>et al</em>. 2023</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10205020">DIP: Dual Incongruity Perceiving Network for Sarcasm Detection</a><br>标题：DIP：用于讽刺检测的双重不协调感知网络<br>作者：Changsong Wen, Guoli Jia, Jufeng Yang（南开大学）<br>发表地点：CVPR 2023</p>
+<h2 id="DIP-Wen-et-al-2023"><a href="#DIP-Wen-et-al-2023" class="headerlink" title="DIP [Wen et al. 2023]"></a>DIP [<a href="#wen2023dip">Wen <em>et al</em>. 2023</a>]</h2><p>论文下载: <a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10205020">DIP: Dual Incongruity Perceiving Network for Sarcasm Detection</a><br>标题：DIP：用于讽刺检测的双重不协调感知网络<br>作者：Changsong Wen（南开大学）, Guoli Jia, Jufeng Yang<br>发表地点：CVPR 2023</p>
 <p>摘要：<br>讽刺表明字面意思与真实态度相反。考虑到图文数据的普及性和互补性，我们研究了多模态讽刺检测的任务。与其他多模态任务不同，对于讽刺数据，一对图像和文本之间存在内在的不协调性，正如心理学理论所证明的那样。为了解决这个问题，我们提出了一个由两个分支组成的双重不协调感知（DIP）网络，从事实和情感层面挖掘讽刺信息。在事实方面，我们引入了一种通道重加权策略来获得语义判别嵌入，并利用高斯分布对不协调引起的不确定相关性进行建模。该分布由存储在存储库中的最新数据生成，可以自适应地模拟讽刺和非讽刺数据之间的语义相似性差异。在情感方面，我们利用具有共享参数的连体层来学习跨模态情感信息。此外，我们使用极性值来构建小批量的关系图，形成连续的对比损失以获得情感嵌入。大量的实验表明，我们提出的方法与最先进的方法相比具有良好的性能。我们的代码在 <a target="_blank" rel="noopener" href="https://github.com/downdric/MSD">https://github.com/downdric/MSD</a> 上发布。</p>
 <p>DIP 整体框架：</p>
 <div align=center>
@@ -384,7 +384,7 @@
 <p><span id="liang2022cmgcn">[Liang <em>et al</em>., 2022]</span> Bin Liang, Chenwei Lou, Xiang Li, Min Yang, Lin Gui, Yulan He, Wenjie Pei, and Ruifeng Xu. Multi-modal sarcasm detection via cross-modal graph convolutional network. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), volume 1, pages 1767–1777. Association for Computational Linguistics, 2022.</p>
 <p><span id="liu2022hke">[Liu <em>et al</em>., 2022]</span> Hui Liu, Wenya Wang, and Haoliang Li. Towards multi-modal sarcasm detection via hierarchical congruity modeling with knowledge enhancement. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing (EMNLP 2022), pages 4995–5006. Association for Computational Linguistics, 2022.</p>
 <p><span id="qiao2023milnet">[Qiao <em>et al</em>., 2023]</span> Yang Qiao, Liqiang Jing, Xuemeng Song, Xiaolin Chen, Lei Zhu, and Liqiang Nie. Mutual-enhanced incongruity learning network for multi-modal sarcasm detection. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 37, pages 9507–9515, 2023.</p>
-<p><span id="wen2023dip">[Wen <em>et al</em>., 2023]</span> Changsong Wen, Guoli Jia, and Jufeng Yang. Dip: Dual incongruity perceiving network for sarcasm detection. In Proceedings of the IEEE&#x2F;CVF Conference on Computer Vision and Pattern Recognition, pages<br>2540–2550, 2023. </p>
+<p><span id="wen2023dip">[Wen <em>et al</em>., 2023]</span> Changsong Wen, Guoli Jia, and Jufeng Yang. Dip: Dual incongruity perceiving network for sarcasm detection. In Proceedings of the IEEE&#x2F;CVF Conference on Computer Vision and Pattern Recognition, pages 2540–2550, 2023. </p>
 
     </div>
 
@@ -404,10 +404,13 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/01/14/KMTmodel/" rel="prev" title="【论文分享】关键词增强的多专家框架用于仇恨言论检测">
-      <i class="fa fa-chevron-left"></i> 【论文分享】关键词增强的多专家框架用于仇恨言论检测
+    <a href="/2023/08/22/MSDread_papers/" rel="prev" title="【论文阅读分类】多模态嘲讽检测">
+      <i class="fa fa-chevron-left"></i> 【论文阅读分类】多模态嘲讽检测
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/09/08/NCLA/" rel="next" title="【论文分享】基于可学习图增强的邻居监督图对比学习">
+      【论文分享】基于可学习图增强的邻居监督图对比学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -482,20 +485,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -521,28 +524,34 @@
           </div>
           <ul class="links-of-recent-posts-list">
               <li class="links-of-recent-posts-item">
+                <time title="创建时间" itemprop="dateCreated datePublished" datetime="2023-09-08T11:11:36+08:00">
+                  09-08
+                </time>
+                <a href="/2023/09/08/NCLA/" title="2023&#x2F;09&#x2F;08&#x2F;NCLA&#x2F;">【论文分享】基于可学习图增强的邻居监督图对比学习</a>
+              </li>
+              <li class="links-of-recent-posts-item">
                 <time title="创建时间" itemprop="dateCreated datePublished" datetime="2023-09-04T11:11:36+08:00">
                   09-04
                 </time>
                 <a href="/2023/09/04/MSDtasks/" title="2023&#x2F;09&#x2F;04&#x2F;MSDtasks&#x2F;">【阅读笔记】多模态嘲讽检测模型汇总</a>
               </li>
               <li class="links-of-recent-posts-item">
+                <time title="创建时间" itemprop="dateCreated datePublished" datetime="2023-08-22T11:11:36+08:00">
+                  08-22
+                </time>
+                <a href="/2023/08/22/MSDread_papers/" title="2023&#x2F;08&#x2F;22&#x2F;MSDread_papers&#x2F;">【论文阅读分类】多模态嘲讽检测</a>
+              </li>
+              <li class="links-of-recent-posts-item">
+                <time title="创建时间" itemprop="dateCreated datePublished" datetime="2023-07-07T11:11:36+08:00">
+                  07-07
+                </time>
+                <a href="/2023/07/07/SDtasks_survey/" title="2023&#x2F;07&#x2F;07&#x2F;SDtasks_survey&#x2F;">【论文分享】嘲讽检测综述</a>
+              </li>
+              <li class="links-of-recent-posts-item">
                 <time title="创建时间" itemprop="dateCreated datePublished" datetime="2023-01-14T11:11:36+08:00">
                   01-14
                 </time>
-                <a href="/2023/01/14/KMTmodel/" title="2023&#x2F;01&#x2F;14&#x2F;KMTmodel&#x2F;">【论文分享】关键词增强的多专家框架用于仇恨言论检测</a>
-              </li>
-              <li class="links-of-recent-posts-item">
-                <time title="创建时间" itemprop="dateCreated datePublished" datetime="2022-10-14T11:11:36+08:00">
-                  10-14
-                </time>
-                <a href="/2022/10/14/newpage/" title="2022&#x2F;10&#x2F;14&#x2F;newpage&#x2F;">联系我</a>
-              </li>
-              <li class="links-of-recent-posts-item">
-                <time title="创建时间" itemprop="dateCreated datePublished" datetime="2022-10-01T11:11:36+08:00">
-                  10-01
-                </time>
-                <a href="/2022/10/01/hello-world/" title="2022&#x2F;10&#x2F;01&#x2F;hello-world&#x2F;">Hello World</a>
+                <a href="/2023/01/14/KMTmodel/" title="2023&#x2F;01&#x2F;14&#x2F;KMTmodel&#x2F;">【我的论文】关键词增强的多专家框架用于仇恨言论检测</a>
               </li>
           </ul>
         </div>
