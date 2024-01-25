@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>联系我</title>
+    <url>/2022/10/14/newpage/</url>
+    <content><![CDATA[<p>欢迎来到我的第一条blog！<br>Welcome to my first blog!</p>
+<h2 id="你可以这样联系我"><a href="#你可以这样联系我" class="headerlink" title="你可以这样联系我"></a>你可以这样联系我</h2><p>E-Mail：<a href="mailto:&#115;&#99;&#x6e;&#x75;&#95;&#119;&#113;&#x66;&#x40;&#109;&#x2e;&#115;&#99;&#110;&#117;&#x2e;&#101;&#100;&#x75;&#x2e;&#99;&#110;">&#115;&#99;&#x6e;&#x75;&#95;&#119;&#113;&#x66;&#x40;&#109;&#x2e;&#115;&#99;&#110;&#117;&#x2e;&#101;&#100;&#x75;&#x2e;&#99;&#110;</a><br>CSDN: <a href="https://blog.csdn.net/Jorffy?type=blog">https://blog.csdn.net/Jorffy?type=blog</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【论文分享】Keyword-Enhanced Multi-Expert Framework for Hate Speech Detection</title>
     <url>/2023/01/14/KMTmodel/</url>
     <content><![CDATA[<h2 id="论文信息"><a href="#论文信息" class="headerlink" title="论文信息"></a>论文信息</h2><p>Title: <a href="https://www.mdpi.com/2227-7390/10/24/4706">Keyword-Enhanced Multi-Expert Framework for Hate Speech Detection</a><br>标题：关键词增强型仇恨言论检测多专家框架<br>作者：钟玮瑜、吴乔峰（共一）、卢国钧、薛云、胡晓辉（通讯）</p>
@@ -50,13 +57,6 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>联系我</title>
-    <url>/2022/10/14/newpage/</url>
-    <content><![CDATA[<p>欢迎来到我的第一条blog！<br>Welcome to my first blog!</p>
-<h2 id="你可以这样联系我"><a href="#你可以这样联系我" class="headerlink" title="你可以这样联系我"></a>你可以这样联系我</h2><p>E-Mail：<a href="mailto:&#115;&#x63;&#x6e;&#117;&#95;&#x77;&#x71;&#102;&#64;&#x6d;&#x2e;&#x73;&#x63;&#110;&#x75;&#46;&#x65;&#x64;&#117;&#46;&#x63;&#110;">&#115;&#x63;&#x6e;&#117;&#95;&#x77;&#x71;&#102;&#64;&#x6d;&#x2e;&#x73;&#x63;&#110;&#x75;&#46;&#x65;&#x64;&#117;&#46;&#x63;&#110;</a><br>CSDN: <a href="https://blog.csdn.net/Jorffy?type=blog">https://blog.csdn.net/Jorffy?type=blog</a></p>
 ]]></content>
   </entry>
 </search>
