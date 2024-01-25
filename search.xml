@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>联系我</title>
+    <url>/2022/10/14/newpage/</url>
+    <content><![CDATA[<p>欢迎来到我的第一条blog！<br>Welcome to my first blog!</p>
+<h2 id="你可以这样联系我"><a href="#你可以这样联系我" class="headerlink" title="你可以这样联系我"></a>你可以这样联系我</h2><p>E-Mail：<a href="mailto:&#x73;&#x63;&#x6e;&#x75;&#95;&#119;&#113;&#x66;&#64;&#109;&#46;&#115;&#x63;&#110;&#117;&#46;&#101;&#100;&#x75;&#x2e;&#x63;&#x6e;">&#x73;&#x63;&#x6e;&#x75;&#95;&#119;&#113;&#x66;&#64;&#109;&#46;&#115;&#x63;&#110;&#117;&#46;&#101;&#100;&#x75;&#x2e;&#x63;&#x6e;</a><br>CSDN: <a href="https://blog.csdn.net/Jorffy?type=blog">https://blog.csdn.net/Jorffy?type=blog</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/10/01/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【论文分享】Keyword-Enhanced Multi-Expert Framework for Hate Speech Detection</title>
     <url>/2023/01/14/KMTmodel/</url>
     <content><![CDATA[<h2 id="论文信息"><a href="#论文信息" class="headerlink" title="论文信息"></a>论文信息</h2><p>Title: <a href="https://www.mdpi.com/2227-7390/10/24/4706">Keyword-Enhanced Multi-Expert Framework for Hate Speech Detection</a><br>标题：关键词增强型仇恨言论检测多专家框架<br>作者：钟玮瑜、吴乔峰（共一）、卢国钧、薛云、胡晓辉（通讯）</p>
@@ -33,30 +58,5 @@
       <tags>
         <tag>Hate Speech Detection</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/10/01/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>联系我</title>
-    <url>/2022/10/14/newpage/</url>
-    <content><![CDATA[<p>欢迎来到我的第一条blog！<br>Welcome to my first blog!</p>
-<h2 id="你可以这样联系我"><a href="#你可以这样联系我" class="headerlink" title="你可以这样联系我"></a>你可以这样联系我</h2><p>E-Mail：<a href="mailto:&#x73;&#x63;&#x6e;&#x75;&#x5f;&#119;&#x71;&#x66;&#x40;&#109;&#46;&#115;&#99;&#110;&#117;&#46;&#x65;&#x64;&#117;&#x2e;&#x63;&#110;">&#x73;&#x63;&#x6e;&#x75;&#x5f;&#119;&#x71;&#x66;&#x40;&#109;&#46;&#115;&#99;&#110;&#117;&#46;&#x65;&#x64;&#117;&#x2e;&#x63;&#110;</a><br>CSDN: <a href="https://blog.csdn.net/Jorffy?type=blog">https://blog.csdn.net/Jorffy?type=blog</a></p>
-]]></content>
   </entry>
 </search>
