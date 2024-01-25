@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>【论文分享】Keyword-Enhanced Multi-Expert Framework for Hate Speech Detection</title>
+    <title>【论文分享】关键词增强的多专家框架用于仇恨言论检测</title>
     <url>/2023/01/14/KMTmodel/</url>
-    <content><![CDATA[<h2 id="论文信息"><a href="#论文信息" class="headerlink" title="论文信息"></a>论文信息</h2><p>论文下载: <a href="https://www.mdpi.com/2227-7390/10/24/4706">Keyword-Enhanced Multi-Expert Framework for Hate Speech Detection</a><br>标题：关键词增强型仇恨言论检测多专家框架<br>作者：钟玮瑜、吴乔峰（共一）、卢国钧、薛云、胡晓辉（通讯）</p>
+    <content><![CDATA[<h2 id="论文信息"><a href="#论文信息" class="headerlink" title="论文信息"></a>论文信息</h2><p>论文下载：<a href="https://www.mdpi.com/2227-7390/10/24/4706">Keyword-Enhanced Multi-Expert Framework for Hate Speech Detection</a><br>标题：关键词增强的多专家框架用于仇恨言论检测<br>作者：钟玮瑜、吴乔峰（共一）、卢国钧、薛云、胡晓辉（通讯）</p>
 <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>由于仇恨言论在互联网上的传播，会给人的身心健康和社会带来极大的危害，因此建立和促进仇恨言论检测的发展并采取一定的回避机制变得非常迫切。目前现有的仇恨言论检测方法，容易忽略目标句子的情感特征，难以识别出一些隐式的仇恨言论。然而，从其他情感资源中获取更多的情感信息将显著影响仇恨言论检测的性能。在利用外部情感信息时，也不能忽略句子本身的关键信息。于是本文提出了一个基于句子本身关键信息和外部情感信息的仇恨言论检测框架。最后在三个公共数据集上的实验结果证明了我们模型的有效性。</p>
 <span id="more"></span>
 
@@ -35,6 +35,24 @@
       <tags>
         <tag>Hate Speech Detection</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/10/01/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>【阅读笔记】多模态嘲讽检测模型汇总</title>
@@ -130,6 +148,9 @@
 <img src="/../images/MSDtasks/DIP_2023.jpg" width="85%" height="85%" />
 </div>
 
+<h2 id="模型结果对比："><a href="#模型结果对比：" class="headerlink" title="模型结果对比："></a>模型结果对比：</h2><div align=center>
+<img src="/../images/MSDtasks/dataset_result.jpg" width="95%" height="95%" />
+</div>
 
 <h2 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h2><p><span id="cai2019hfm">[Cai <em>et al</em>., 2019]</span> Yitao Cai, Huiyu Cai, and Xiaojun Wan. Multi-modal sarcasm detection in twitter with hierarchical fusion model. In Proceedings of the 57th Conference of the Association for Computational Linguistics, pages 2506–2515, 2019.</p>
 <p><span id="xu2020drnet">[Xu <em>et al</em>., 2020]</span> Nan Xu, Zhixiong Zeng, and Wenji Mao. Reasoning with multimodal sarcastic tweets via modeling cross-modality contrast and semantic association. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 3777–3786, 2020.</p>
@@ -149,28 +170,10 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/10/01/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>联系我</title>
     <url>/2022/10/14/newpage/</url>
     <content><![CDATA[<p>欢迎来到我的第一条blog！<br>Welcome to my first blog!</p>
-<h2 id="你可以这样联系我"><a href="#你可以这样联系我" class="headerlink" title="你可以这样联系我"></a>你可以这样联系我</h2><p>E-Mail：<a href="mailto:&#x73;&#x63;&#110;&#x75;&#x5f;&#119;&#x71;&#x66;&#x40;&#x6d;&#x2e;&#115;&#99;&#110;&#117;&#x2e;&#101;&#x64;&#117;&#46;&#99;&#x6e;">&#x73;&#x63;&#110;&#x75;&#x5f;&#119;&#x71;&#x66;&#x40;&#x6d;&#x2e;&#115;&#99;&#110;&#117;&#x2e;&#101;&#x64;&#117;&#46;&#99;&#x6e;</a><br>CSDN: <a href="https://blog.csdn.net/Jorffy?type=blog">https://blog.csdn.net/Jorffy?type=blog</a></p>
+<h2 id="你可以这样联系我"><a href="#你可以这样联系我" class="headerlink" title="你可以这样联系我"></a>你可以这样联系我</h2><p>E-Mail：<a href="mailto:&#115;&#x63;&#x6e;&#117;&#95;&#119;&#x71;&#102;&#64;&#x6d;&#x2e;&#115;&#99;&#x6e;&#117;&#x2e;&#101;&#x64;&#x75;&#x2e;&#99;&#x6e;">&#115;&#x63;&#x6e;&#117;&#95;&#119;&#x71;&#102;&#64;&#x6d;&#x2e;&#115;&#99;&#x6e;&#117;&#x2e;&#101;&#x64;&#x75;&#x2e;&#99;&#x6e;</a><br>CSDN: <a href="https://blog.csdn.net/Jorffy?type=blog">https://blog.csdn.net/Jorffy?type=blog</a></p>
 ]]></content>
   </entry>
 </search>
