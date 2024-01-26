@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":"ture"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="【论文阅读分类】    - 多模态嘲讽检测    - 对比学习    - 多模态命名实体识别(带*为精读&#x2F;代码复现)">
+  <meta name="description" content="这里主要是整理自己在研究多模态嘲讽检测邻域时阅读到的比较好有借鉴意义的论文。【论文阅读分类】  多模态嘲讽检测 CLIP 对比学习 多模态命名实体识别  (带*为精读&#x2F;代码复现)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【论文阅读分类】多模态嘲讽检测">
 <meta property="og:url" content="http://example.com/2023/08/22/MSDread_papers/index.html">
 <meta property="og:site_name" content="Jorffy&#39;s blog">
-<meta property="og:description" content="【论文阅读分类】    - 多模态嘲讽检测    - 对比学习    - 多模态命名实体识别(带*为精读&#x2F;代码复现)">
+<meta property="og:description" content="这里主要是整理自己在研究多模态嘲讽检测邻域时阅读到的比较好有借鉴意义的论文。【论文阅读分类】  多模态嘲讽检测 CLIP 对比学习 多模态命名实体识别  (带*为精读&#x2F;代码复现)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-22T03:11:36.000Z">
-<meta property="article:modified_time" content="2024-01-26T04:23:26.397Z">
+<meta property="article:modified_time" content="2024-01-26T05:56:49.080Z">
 <meta property="article:author" content="SCNU_WQF">
-<meta property="article:tag" content="MultiModal">
 <meta property="article:tag" content="Sarcasm Detection">
+<meta property="article:tag" content="MultiModal">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2023/08/22/MSDread_papers/">
@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-01-26 12:23:26" itemprop="dateModified" datetime="2024-01-26T12:23:26+08:00">2024-01-26</time>
+                <time title="修改时间：2024-01-26 13:56:49" itemprop="dateModified" datetime="2024-01-26T13:56:49+08:00">2024-01-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,14 +253,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -272,12 +272,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>【论文阅读分类】<br>    - 多模态嘲讽检测<br>    - 对比学习<br>    - 多模态命名实体识别<br>(带*为精读&#x2F;代码复现)</p>
+        <p>这里主要是整理自己在研究多模态嘲讽检测邻域时阅读到的比较好有借鉴意义的论文。<br>【论文阅读分类】</p>
+<ul>
+<li>多模态嘲讽检测</li>
+<li>CLIP</li>
+<li>对比学习</li>
+<li>多模态命名实体识别</li>
+</ul>
+<p>(带*为精读&#x2F;代码复现)</p>
 <span id="more"></span>
 
-<h2 id="多模态嘲讽检测"><a href="#多模态嘲讽检测" class="headerlink" title="多模态嘲讽检测"></a>多模态嘲讽检测</h2><p>*HFM(ACL 2019): <a target="_blank" rel="noopener" href="https://aclanthology.org/P19-1239/">Multi-Modal Sarcasm Detection in Twitter with Hierarchical Fusion Model</a><br>D&amp;R Net(ACL 2020): <a target="_blank" rel="noopener" href="https://aclanthology.org/2020.acl-main.349/">Reasoning with Multimodal Sarcastic Tweets via Modeling Cross-Modality Contrast and Semantic Association</a><br>Rse-BERT&#x2F;Att-BERT(EMNLP 2020): <a target="_blank" rel="noopener" href="https://aclanthology.org/2020.findings-emnlp.124/">Modeling Intra and Inter-modality Incongruity for Multi-Modal Sarcasm Detection</a><br>InCrossMGs(MM 2021): <a target="_blank" rel="noopener" href="https://dl.acm.org/doi/abs/10.1145/3474085.3475190">Multi-Modal Sarcasm Detection with Interactive In-Modal and Cross-Modal Graphs</a><br>CMGCN(ACL 2022): <a target="_blank" rel="noopener" href="https://aclanthology.org/2022.acl-long.124/">Multi-Modal Sarcasm Detection via Cross-Modal Graph Convolutional Network</a><br>*HKE(EMNLP 2022): <a target="_blank" rel="noopener" href="https://aclanthology.org/2022.emnlp-main.333/">Towards Multi-Modal Sarcasm Detection via Hierarchical Congruity Modeling with Knowledge Enhancement</a><br>(HKE代码运行时，由于显存一直在变化，故每次运行结果都不同，在此框架下加创新点并运行比较耗时，且容易出现显存不足的问题。所以最后还是选择了换框架 &#x2F;(ㄒoㄒ)&#x2F;~~)<br>*MILNet(AAAI 2023): <a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/26138">Mutual-Enhanced Incongruity Learning Network for Multi-Modal Sarcasm Detection</a><br>*DIP(CVPR 2023): <a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10205020">DIP: Dual Incongruity Perceiving Network for Sarcasm Detection</a></p>
-<h2 id="对比学习"><a href="#对比学习" class="headerlink" title="对比学习"></a>对比学习</h2><p>*CLNSN(NeurIPS 2021): <a target="_blank" rel="noopener" href="https://openreview.net/forum?id=xLExSzfIDmo">Robust Contrastive Learning Using Negative Samples with Diminished Semantics</a><br>SRCL(ACL 2023): <a target="_blank" rel="noopener" href="https://aclanthology.org/2023.acl-long.819/">Vision Language Pre-training by Contrastive Learning with Cross-Modal Similarity Regulation</a><br>*NCLA(AAAI 2023): <a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/26168">Neighbor Contrastive Learning on Learnable Graph Augmentation</a></p>
-<h2 id="多模态命名实体识别"><a href="#多模态命名实体识别" class="headerlink" title="多模态命名实体识别"></a>多模态命名实体识别</h2>
+<h2 id="多模态嘲讽检测"><a href="#多模态嘲讽检测" class="headerlink" title="多模态嘲讽检测"></a>多模态嘲讽检测</h2><ol>
+<li>*HFM(ACL 2019): <a target="_blank" rel="noopener" href="https://aclanthology.org/P19-1239/">Multi-Modal Sarcasm Detection in Twitter with Hierarchical Fusion Model</a></li>
+<li>D&amp;R Net(ACL 2020): <a target="_blank" rel="noopener" href="https://aclanthology.org/2020.acl-main.349/">Reasoning with Multimodal Sarcastic Tweets via Modeling Cross-Modality Contrast and Semantic Association</a></li>
+<li>Rse-BERT&#x2F;Att-BERT(EMNLP 2020): <a target="_blank" rel="noopener" href="https://aclanthology.org/2020.findings-emnlp.124/">Modeling Intra and Inter-modality Incongruity for Multi-Modal Sarcasm Detection</a></li>
+<li>InCrossMGs(MM 2021): <a target="_blank" rel="noopener" href="https://dl.acm.org/doi/abs/10.1145/3474085.3475190">Multi-Modal Sarcasm Detection with Interactive In-Modal and Cross-Modal Graphs</a></li>
+<li>CMGCN(ACL 2022): <a target="_blank" rel="noopener" href="https://aclanthology.org/2022.acl-long.124/">Multi-Modal Sarcasm Detection via Cross-Modal Graph Convolutional Network</a></li>
+<li>*HKE(EMNLP 2022): <a target="_blank" rel="noopener" href="https://aclanthology.org/2022.emnlp-main.333/">Towards Multi-Modal Sarcasm Detection via Hierarchical Congruity Modeling with Knowledge Enhancement</a><br> (HKE代码运行时，由于显存一直在变化，故每次运行结果都不同，在此框架下加创新点并运行比较耗时，且容易出现显存不足的问题。所以最后还是选择了换框架 &#x2F;(ㄒoㄒ)&#x2F;~~)</li>
+<li>*MILNet(AAAI 2023): <a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/26138">Mutual-Enhanced Incongruity Learning Network for Multi-Modal Sarcasm Detection</a></li>
+<li>*DIP(CVPR 2023): <a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10205020">DIP: Dual Incongruity Perceiving Network for Sarcasm Detection</a></li>
+</ol>
+<h2 id="CLIP"><a href="#CLIP" class="headerlink" title="CLIP"></a>CLIP</h2><p>*CLIP(ICML 2021): <a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v139/radford21a">Learning Transferable Visual Models From Natural Language Supervision</a><br>代码开源：<a target="_blank" rel="noopener" href="https://github.com/openai/CLIP">https://github.com/openai/CLIP</a><br>API 调用：<a target="_blank" rel="noopener" href="https://huggingface.co/docs/transformers/model_doc/clip">https://huggingface.co/docs/transformers/model_doc/clip</a></p>
+<h2 id="对比学习"><a href="#对比学习" class="headerlink" title="对比学习"></a>对比学习</h2><ol>
+<li>*CLNSN(NeurIPS 2021): <a target="_blank" rel="noopener" href="https://openreview.net/forum?id=xLExSzfIDmo">Robust Contrastive Learning Using Negative Samples with Diminished Semantics</a></li>
+<li>SRCL(ACL 2023): <a target="_blank" rel="noopener" href="https://aclanthology.org/2023.acl-long.819/">Vision Language Pre-training by Contrastive Learning with Cross-Modal Similarity Regulation</a></li>
+<li>*NCLA(AAAI 2023): <a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/26168">Neighbor Contrastive Learning on Learnable Graph Augmentation</a></li>
+</ol>
+<h2 id="多模态命名实体识别"><a href="#多模态命名实体识别" class="headerlink" title="多模态命名实体识别"></a>多模态命名实体识别</h2><ol>
+<li>*HVPNeT(naacl 2022): <a target="_blank" rel="noopener" href="https://aclanthology.org/2022.findings-naacl.121/">Good Visual Guidance Make A Better Extractor: Hierarchical Visual Prefix for Multimodal Entity and Relation Extraction</a></li>
+</ol>
+
     </div>
 
     
@@ -306,8 +330,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/MultiModal/" rel="tag"># MultiModal</a>
               <a href="/tags/Sarcasm-Detection/" rel="tag"># Sarcasm Detection</a>
+              <a href="/tags/MultiModal/" rel="tag"># MultiModal</a>
           </div>
 
         
@@ -381,7 +405,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E6%A8%A1%E6%80%81%E5%98%B2%E8%AE%BD%E6%A3%80%E6%B5%8B"><span class="nav-number">1.</span> <span class="nav-text">多模态嘲讽检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0"><span class="nav-number">2.</span> <span class="nav-text">对比学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E6%A8%A1%E6%80%81%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB"><span class="nav-number">3.</span> <span class="nav-text">多模态命名实体识别</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E6%A8%A1%E6%80%81%E5%98%B2%E8%AE%BD%E6%A3%80%E6%B5%8B"><span class="nav-number">1.</span> <span class="nav-text">多模态嘲讽检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CLIP"><span class="nav-number">2.</span> <span class="nav-text">CLIP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0"><span class="nav-number">3.</span> <span class="nav-text">对比学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E6%A8%A1%E6%80%81%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text">多模态命名实体识别</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
