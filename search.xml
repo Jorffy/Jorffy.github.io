@@ -1,89 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>【我的论文】关键词增强的多专家框架用于仇恨言论检测</title>
-    <url>/2023/01/14/KMTmodel/</url>
-    <content><![CDATA[<h2 id="论文信息"><a href="#论文信息" class="headerlink" title="论文信息"></a>论文信息</h2><p>论文下载：<a href="https://www.mdpi.com/2227-7390/10/24/4706">Keyword-Enhanced Multi-Expert Framework for Hate Speech Detection</a><br>标题：关键词增强的多专家框架用于仇恨言论检测<br>作者：钟玮瑜、吴乔峰（共一）、卢国钧、薛云、胡晓辉（通讯）<br>发表地点：Mathematics 2022, 10(24), 4706</p>
-<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>由于仇恨言论在互联网上的传播，会给人的身心健康和社会带来极大的危害，因此建立和促进仇恨言论检测的发展并采取一定的回避机制变得非常迫切。目前现有的仇恨言论检测方法，容易忽略目标句子的情感特征，难以识别出一些隐式的仇恨言论。然而，从其他情感资源中获取更多的情感信息将显著影响仇恨言论检测的性能。在利用外部情感信息时，也不能忽略句子本身的关键信息。于是本文提出了一个基于句子本身关键信息和外部情感信息的仇恨言论检测框架。最后在三个公共数据集上的实验结果证明了我们模型的有效性。</p>
-<span id="more"></span>
-
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>随着社交媒体和移动互联网平台的广泛使用，网络言论的传播速度和发布自由度不断提高，导致仇恨言论恶意泛滥。接触此类语言可能会对受害者的心理健康造成负面影响，从而引发严重的社会问题。为了防止进一步的负面影响，当局需要介入检测网络仇恨言论。因此，快速准确地自动检测仇恨言论已成为自然语言处理领域的热门研究课题。近年来，仇恨言论检测备受关注。</p>
-<div align=center>
-<img src="https://www.mdpi.com/mathematics/mathematics-10-04706/article_deploy/html/images/mathematics-10-04706-g001.png" width="85%" height="85%" />
-</div>
-
-<p>图 1 显示了一个例子，其中第一句包含仇恨词汇 “他妈的援助”（fucking aids），这是一种明显的攻击性仇恨言论，而第二句没有明显的仇恨词汇或语义，是一个积极的句子。</p>
-<p>利用深度学习检测仇恨言论的方法是近年来大多数研究的重点。然而，以往的研究忽略了目标检测句子的情感特征，仅使用预训练模型或深度神经网络来获取语义特征。Wang, C. [6]的研究表明，仇恨言论的语义具有强烈的负面情绪倾向。为了克服这一问题，最近的研究提出使用多任务学习（MTL），通过使用情感信息来提高仇恨言论检测的性能[7]。迁移学习是从训练数据中获得的可通用知识迁移到目标任务的过程。MTL 是迁移学习的一种，它包括同时学习多个相关任务，让这些任务在学习过程中共享信息，并利用不同任务之间的相关性来提高模型在每个任务上的性能和泛化能力。Kapil, P. [8]提出了一种深度 MTL 框架，利用多个相关分类任务中的有用信息来进行仇恨言论检测；该框架采用了一种硬参数共享方法，容易产生负迁移。Zhou, X. [9]使用多个特征提取单元共享多任务参数，从而使模型能够进行情感知识共享。然后，使用门控网络来融合仇恨言论检测的特征。该模型采用了软参数共享方法，将一个专家分成多个专家，从而缓解了硬参数带来的负迁移问题。</p>
-<p>虽然近年来仇恨言论检测取得了不错的成绩，但仍存在以下问题：（1）仇恨言论检测中最新使用的多任务框架是软参数共享[9]，即所有专家共享所有任务，但仇恨言论检测和情感分析任务既有正相关关系，也有负相关关系。正相关是指有利于主要任务拟合的参数关系，反之，负相关则不利。如果不分离任务间的负相关参数，作为任务的一部分就会出现一些噪音，从而导致负迁移。此外，在使用多个专家时，由于专家们拥有来自不同任务的丰富信息，简单的门控网络无法有效融合和过滤不同的信息。(2) 目前的工作缺乏从句子中提取关键信息（如关键词）的能力[5]。它不能有效识别不同类型的仇恨词，如亵渎词，也不能识别某些身份词与冒犯性语句之间的关联。某些身份词（尤其是涉及少数群体的身份词）主要出现在具有攻击性的文本中[10]，如句子 “这也是奥巴马的许多政策被推翻&#x2F;废除的原因，只是因为黑人做了这些事。”中没有明显的仇恨词，而是通过身份词 “黑人 “进行种族歧视。</p>
-<p>为解决上述问题，我们提出了以下方法。(1) 对于第一个问题，我们受到最近的渐进分层提取（PLE）模型[11]和门控网络研究[12]的启发。我们将特征提取单元（如专家模块）分为共享部分和特定任务部分。这种方法强化了任务本身的独立特征，更好地减少了弱相关任务共享参数造成的负迁移。此外，我们还设计了一个特征过滤门，可以更好地融合和过滤多个专家模块的信息。(2) 为了解决第二个问题，我们从最近的对比学习模型[13]中得到启发，提出了一个解决方案。我们的模型将对比学习应用于英语仇恨言论检测，使用脏话词典和身份术语词典来构建正反实例。这一结果使模型对关键词语更加敏感，从而可以学习各类仇恨词语或身份术语词语与攻击性语句之间的关联。总之，我们的研究有以下贡献：</p>
-<ul>
-<li>为了更好地研究仇恨信息和情感信息之间的相互作用，我们提出了一种更适合仇恨言论检测的 MTL 模型，该模型使用共享专家和特定任务专家来提取特征，最后使用特征过滤门来融合特征。</li>
-<li>鉴于之前的工作中缺乏对重要词语信息的使用，我们在预训练模型中引入了对比学习，使我们的模型能够更好地识别文本中的关键词。</li>
-<li>在三个基准数据集上的实验结果表明，我们的模型在仇恨言论检测方面非常有效。</li>
-</ul>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><!-- ![model](https://www.mdpi.com/mathematics/mathematics-10-04706/article_deploy/html/images/mathematics-10-04706-g002.png) -->
-
-<div align=center>
-<img src="https://www.mdpi.com/mathematics/mathematics-10-04706/article_deploy/html/images/mathematics-10-04706-g002.png" width="85%" height="85%" />
-</div>
-
-<p>本节将介绍我们的仇恨言论检测关键字增强多专家框架模型（KMT）。该模型利用句子的关键信息和外部情感信息来改进仇恨言论检测。<br>KMT 的总体架构如图 2 所示。该框架由四个模块组成：<strong>（1）文本输入模块。</strong>图中底部显示的是文本输入模块，该模块使用预训练模型 BERT 或 HateBERT 对输入句子进行编码，并生成上下文和语义整合的输入向量 x；<strong>（2）多任务学习模块。</strong>图中左上方为多任务学习模块，我们利用多任务学习框架将情感信息和仇恨信息进行交互，学习共享特征和特定任务特征，利用情感信息辅助仇恨言论检测；<strong>（3）特征过滤模块。</strong>图中门为特征过滤模块，用于对专家模块输出的特征进行过滤和融合，筛选出重要的情感信息和仇恨言论信息；（4）对比学习模块。图中右上方为对比学习模块，用于提取句子中的关键信息，提高模型对句子关键词的敏感度。最后，对 MTL 模块和对比学习模块进行联合训练。</p>
-]]></content>
-      <categories>
-        <category>【我的论文】</category>
-      </categories>
-      <tags>
-        <tag>Hate Speech Detection</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【论文分享】嘲讽检测综述</title>
-    <url>/2023/07/07/SDtasks_survey/</url>
-    <content><![CDATA[<h2 id="论文信息"><a href="#论文信息" class="headerlink" title="论文信息"></a>论文信息</h2><p>论文下载：<a href="https://arxiv.org/abs/2202.02516">A SURVEY ON AUTOMATED SARCASM DETECTION ON TWITTER</a><br>标题：基于 Twitter 的嘲讽检测论文调查<br>作者：Bleau Moores, Vijay Mago<br>发表地点：A PREPRINT in Arxiv（预印版）</p>
-<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>自动嘲讽检测是计算机科学中一个不断发展的领域。短文信息越来越多地被用于交流，尤其是在 Twitter 等社交媒体平台上。由于语境不足或缺失，这些信息中未识别的嘲讽会颠倒语句的含义，导致混乱和交流失败。本文介绍了当前用于嘲讽检测的各种方法，包括通过上下文、发帖历史和机器学习模型进行检测。此外，还可以观察到向深度学习方法的转变，这可能是由于使用具有诱导特征而非离散特征的模型与变压器的创新相结合所带来的好处。</p>
-]]></content>
-      <categories>
-        <category>【论文分享】</category>
-      </categories>
-      <tags>
-        <tag>Sarcasm Detection</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【论文分享】基于可学习图增强的邻居监督图对比学习</title>
-    <url>/2023/09/08/NCLA/</url>
-    <content><![CDATA[<h2 id="论文信息"><a href="#论文信息" class="headerlink" title="论文信息"></a>论文信息</h2><p>论文下载：<a href="https://ojs.aaai.org/index.php/AAAI/article/view/26168">Neighbor Contrastive Learning on Learnable Graph Augmentation</a><br>标题：基于可学习图增强的邻居监督图对比学习<br>作者：Xiao Shen（海南大学）, Dewang Sun, Shirui Pan, Xi Zhou, Laurence T. Yang<br>发表地点：AAAI 2023<br>代码开源：<a href="https://github.com/shenxiaocam/NCLA">https://github.com/shenxiaocam/NCLA</a></p>
-<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>近年来，旨在从未标记的图中学习表示的图对比学习（GCL）取得了长足的进步。然而，现有的GCL方法大多采用人工设计的图增强，对各种图数据集都很敏感。此外，最初在计算机视觉中产生的对比损失已直接应用于图形数据，其中相邻节点被视为负值，因此与锚点相距很远。然而，这与网络的同质假设相矛盾，即连接的节点通常属于同一类，并且应该彼此靠近。在这项工作中，我们提出了一种名为NCLA的端到端自动GCL方法，用于将邻居对比学习应用于可学习图增强。多头图注意力机制自动学习多个自适应拓扑图增强视图，无需先验领域知识即可兼容各种图数据集。此外，通过将网络拓扑作为监督信号，设计了邻域对比损失，以允许每个锚点具有多个正信号。在拟议的 NCLA 中，增强和嵌入都是端到端学习的。在基准数据集上的大量实验表明，当标签极其有限时，NCLA在自监督GCL上产生了最先进的节点分类性能，甚至超过了监督节点。我们的代码在 <a href="https://github.com/shenxiaocam/NCLA">https://github.com/shenxiaocam/NCLA</a> 上发布。</p>
-<span id="more"></span>
-
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在过去几年中，图神经网络（GNN）因其在节点分类（Kipf 和 Welling，2017 年）、链接预测（Shen 和 Chung，2020 年）和图分类等各种图挖掘任务中的出色表现而备受关注（Hamilton, Ying 和 Leskovec 2017）。现有的大多数 GNN 都是以监督的方式进行训练的，这在很大程度上依赖于大量注释良好的标签。然而，在现实世界的应用中，收集大量带标签的图结构数据往往需要耗费大量资源和时间（Shen 等人，2020a；Shen 等人，2020b；Shen、Mao 和 Chung，2020；Wu 等人，2020；Dai 等人，2022）。</p>
-<p>对比学习（Contrastive Learning，CL）是最具代表性的自监督学习技术之一，可以减少对人工标签的依赖。对比学习在计算机视觉（CV）（Zhu 等人，2020 年）和自然语言处理（NLP）（Aberdam 等人，2021 年）的无监督表示学习中表现出了前所未有的性能。最近，在图对比学习（GCL）（Hassani 和 Khasahmadi，2020 年；Zhu 等人，2020 年；Xia 等人，2022a；Xia 等人，2022b；Zheng 等人，2022 年）的发展启发下，人们投入了巨大的努力，将 GNN 与 CL 结合起来，从无标签图中学习稳健的表示。</p>
-<p>现有的 GCL 方法大多采用类似的模式。首先，它们采用各种图增强策略，如节点丢弃（You 等人，2020 年）、边扰动（Zhu 等人，2020 年）、属性掩蔽（Zhu 等人，2021 年）、子图（Yang 等人，2022 年）和图扩散（Hassani 和 Khasahmadi，2020 年），生成多个具有差异的图增强视图。其次，他们应用了 CV 中广泛使用的对比损失，如 InfoNCE（Van den Oord、Li 和 Vinyals，2018 年）、归一化温度标度交叉熵（NT-Xent）（Zhu et al. 2020）、Jensen-Shannon Divergence（JSD）（Nowozin、Cseke 和 Tomioka，2016）和 Triplet loss（Schroff、Kalenichenko 和 Philbin，2015）等，根据 InfoMax（Linsker，1988）原理提取不同增强视图之间的共同核心信息。尽管 GCL 得到了蓬勃发展，但标准范式在图增强和对比目标方面仍存在一些缺陷。</p>
-<p>CL的理论和实证分析表明，好的增强视图应该是多样化的，同时保持与任务相关的信息完好无损（Tian等人，2020）。然而，现有的手工图增强策略会随机扰动图拓扑结构，无法保持任务相关信息的完整性。例如，丢弃一条重要的边会严重破坏与下游任务高度相关的图拓扑结构，从而导致图嵌入质量低下（Zhu 等，2021）。此外，由于图数据的多样性，目前还没有适用于不同数据集的通用图增强技术（You 等人，2020 年；You 等人，2021 年）。因此，现有的临时图增强方法必须根据先前的领域知识或反复试验为每个图数据集手动选择（You 等人，2020 年），这大大限制了现有 GCL 方法的效率和普遍适用性。</p>
-<div align=center>
-<img src="/../images/NCLA/Fig1_3cl.jpg" width="95%" height="95%" />
-</div>
-
-<p>另一方面，现有的 GCL 方法直接将最初在 CV 中提出的对比损失应用于图形数据（Qiu 等人，2020 年；You 等人，2020 年；Zhu 等人，2020 年；Wan 等人，2021a；Wan 等人，2021b；Zhu 等人，2021 年），而不注意图像与图形之间的内在区别。对比损失被用来指导表征学习，将正对图像拉到一起，将负对图像推开。如图 1(a)和 1(b)所示，在 InfoNCE 和 NT-Xent 中，通过创建同一节点的不同增强视图，每个锚点都会形成一对正对。然后，InfoNCE 将来自不同视图的所有其他不同节点视为负节点。而 NTXent 则引入了更多的否定，将一个视图内和来自不同视图的所有不同节点都视为否定。值得注意的是，在 InfoNCE 和 NT-Xent 中，相邻节点都被视为负节点，然后被推离锚点。然而，在 GCL 中，与 CL 相结合的 GNN 通常基于同类假设，即相连节点通常属于同一类别（McPherson、Smith-Lovin 和 Cook，2001 年）。换句话说，连接的节点应该彼此相似，而不是相距甚远。由于图像和图形之间的内在区别，直接将 CV 中开发的对比损失应用于 GCL 会忽略网络拓扑结构，导致嵌入结果与 GNN 的同类假设相矛盾。</p>
-<p>为了弥补上述局限，我们在这项工作中提出了一种新的 GCL 方法，命名为 NCLA，它将邻接对比学习应用于可学习图增强。一方面，NCLA 采用多头图注意网络（GAT）（Veličković 等人，2018 年）生成具有自适应拓扑的 K 个可学习图增强视图。这种可学习的增强可以自动兼容各种图数据集，而无需事先了解领域知识。此外，与可能严重破坏原始拓扑的不恰当手工图增强相比，NCLA 生成的基于注意力的可学习增强视图将保留与原始图完全相同的节点和边，但具有不同的自适应边权重。此外，现有的 GCL 方法对不同的增强视图使用完全相同的 GNN 编码器和绑定的可学习参数（You 等人，2020 年；Zhu 等人，2020 年；Zhu 等人，2021 年），而在 NCLA 中，每个增强视图都有自己的可学习参数。因此，NCLA 可以生成更安全的图增强，而无需对原始拓扑进行不当修改，同时还能保证不同增强视图之间的多样性。另一方面，与之前直接利用最初在 CV 中提出的对比损失（如 InfoNCE 或 NT-Xent）的 GCL 方法不同，我们为节点-节点 GCL 设计了一种新的邻居对比损失。所提出的邻居对比损失是对 NT-Xent 损失（Zhu 等人，2020 年）的新扩展，它将网络拓扑作为监督信号来定义 GCL 中的正负。具体地说，与 NT-Xent 中每个锚点只能形成一对正值不同，所提出的邻居对比损失允许每个锚点有多个正值。如图 1(c)所示，这些多个正对来自不同视图中的同一节点，以及锚点在同一视图中的邻居和来自不同视图的邻居。因此，视图内和不同视图中锚点的非邻居将被视为视图内和视图间的阴性。这项工作的贡献可总结如下：</p>
-<ul>
-<li>与大多数现有的 GCL 方法必须根据数据集手动挑选手工图增强相比，所提出的 NCLA 首次采用了多头图注意力机制作为可学习的图增强函数，其中每个头对应一个增强视图。这种基于注意力的可学习图增强避免了对原始拓扑结构的不当修改，并能自动兼容各种图数据集。</li>
-<li>现有的 GCL 方法直接将 CV 中的对比损失应用于图形数据，忽略了网络拓扑结构。CV 中的损失来处理图数据，而忽略了网络拓扑结构。据我们所知，我们的工作是 在节点-节点 GCL 中研究邻接对比学习的开创性尝试之一。通过将网络拓扑结构作为监督信号，允许每个锚点出现多个阳性结果。</li>
-<li>在标准的 GCL 范式中，图增强和嵌入学习分两个阶段进行，可能需要进行双层优化。相比之下，在 NCLA 中，图形增强与嵌入学习是端到端的，因此具有很高的灵活性和易用性。</li>
-<li>在各种图数据集上进行的大量实验表明，NCLA 在使用稀缺标签进行半监督节点分类时，始终优于最先进的 GCL 方法，甚至优于某些监督 GNN。</li>
-</ul>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><div align=center>
-<img src="/../images/NCLA/Fig2_model.jpg" width="95%" height="95%" />
-</div>]]></content>
-      <categories>
-        <category>【论文分享】</category>
-      </categories>
-      <tags>
-        <tag>Contrastive Learning</tag>
-        <tag>Graph</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【论文阅读分类】多模态嘲讽检测</title>
     <url>/2023/08/22/MSDread_papers/</url>
     <content><![CDATA[<p>这里主要是整理自己在研究多模态嘲讽检测邻域时阅读到的比较好有借鉴意义的论文。<br>【论文阅读分类】</p>
@@ -120,34 +37,79 @@
         <category>【论文阅读分类】</category>
       </categories>
       <tags>
-        <tag>Sarcasm Detection</tag>
         <tag>MultiModal</tag>
+        <tag>Sarcasm Detection</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/10/01/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>【我的论文】关键词增强的多专家框架用于仇恨言论检测</title>
+    <url>/2023/01/14/KMTmodel/</url>
+    <content><![CDATA[<h2 id="论文信息"><a href="#论文信息" class="headerlink" title="论文信息"></a>论文信息</h2><p>论文下载：<a href="https://www.mdpi.com/2227-7390/10/24/4706">Keyword-Enhanced Multi-Expert Framework for Hate Speech Detection</a><br>标题：关键词增强的多专家框架用于仇恨言论检测<br>作者：钟玮瑜、吴乔峰（共一）、卢国钧、薛云、胡晓辉（通讯）<br>发表地点：Mathematics 2022, 10(24), 4706</p>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>由于仇恨言论在互联网上的传播，会给人的身心健康和社会带来极大的危害，因此建立和促进仇恨言论检测的发展并采取一定的回避机制变得非常迫切。目前现有的仇恨言论检测方法，容易忽略目标句子的情感特征，难以识别出一些隐式的仇恨言论。然而，从其他情感资源中获取更多的情感信息将显著影响仇恨言论检测的性能。在利用外部情感信息时，也不能忽略句子本身的关键信息。于是本文提出了一个基于句子本身关键信息和外部情感信息的仇恨言论检测框架。最后在三个公共数据集上的实验结果证明了我们模型的有效性。</p>
+<span id="more"></span>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>随着社交媒体和移动互联网平台的广泛使用，网络言论的传播速度和发布自由度不断提高，导致仇恨言论恶意泛滥。接触此类语言可能会对受害者的心理健康造成负面影响，从而引发严重的社会问题。为了防止进一步的负面影响，当局需要介入检测网络仇恨言论。因此，快速准确地自动检测仇恨言论已成为自然语言处理领域的热门研究课题。近年来，仇恨言论检测备受关注。</p>
+<div align=center>
+<img src="https://www.mdpi.com/mathematics/mathematics-10-04706/article_deploy/html/images/mathematics-10-04706-g001.png" width="85%" height="85%" />
+</div>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>图 1 显示了一个例子，其中第一句包含仇恨词汇 “他妈的援助”（fucking aids），这是一种明显的攻击性仇恨言论，而第二句没有明显的仇恨词汇或语义，是一个积极的句子。</p>
+<p>利用深度学习检测仇恨言论的方法是近年来大多数研究的重点。然而，以往的研究忽略了目标检测句子的情感特征，仅使用预训练模型或深度神经网络来获取语义特征。Wang, C. [6]的研究表明，仇恨言论的语义具有强烈的负面情绪倾向。为了克服这一问题，最近的研究提出使用多任务学习（MTL），通过使用情感信息来提高仇恨言论检测的性能[7]。迁移学习是从训练数据中获得的可通用知识迁移到目标任务的过程。MTL 是迁移学习的一种，它包括同时学习多个相关任务，让这些任务在学习过程中共享信息，并利用不同任务之间的相关性来提高模型在每个任务上的性能和泛化能力。Kapil, P. [8]提出了一种深度 MTL 框架，利用多个相关分类任务中的有用信息来进行仇恨言论检测；该框架采用了一种硬参数共享方法，容易产生负迁移。Zhou, X. [9]使用多个特征提取单元共享多任务参数，从而使模型能够进行情感知识共享。然后，使用门控网络来融合仇恨言论检测的特征。该模型采用了软参数共享方法，将一个专家分成多个专家，从而缓解了硬参数带来的负迁移问题。</p>
+<p>虽然近年来仇恨言论检测取得了不错的成绩，但仍存在以下问题：（1）仇恨言论检测中最新使用的多任务框架是软参数共享[9]，即所有专家共享所有任务，但仇恨言论检测和情感分析任务既有正相关关系，也有负相关关系。正相关是指有利于主要任务拟合的参数关系，反之，负相关则不利。如果不分离任务间的负相关参数，作为任务的一部分就会出现一些噪音，从而导致负迁移。此外，在使用多个专家时，由于专家们拥有来自不同任务的丰富信息，简单的门控网络无法有效融合和过滤不同的信息。(2) 目前的工作缺乏从句子中提取关键信息（如关键词）的能力[5]。它不能有效识别不同类型的仇恨词，如亵渎词，也不能识别某些身份词与冒犯性语句之间的关联。某些身份词（尤其是涉及少数群体的身份词）主要出现在具有攻击性的文本中[10]，如句子 “这也是奥巴马的许多政策被推翻&#x2F;废除的原因，只是因为黑人做了这些事。”中没有明显的仇恨词，而是通过身份词 “黑人 “进行种族歧视。</p>
+<p>为解决上述问题，我们提出了以下方法。(1) 对于第一个问题，我们受到最近的渐进分层提取（PLE）模型[11]和门控网络研究[12]的启发。我们将特征提取单元（如专家模块）分为共享部分和特定任务部分。这种方法强化了任务本身的独立特征，更好地减少了弱相关任务共享参数造成的负迁移。此外，我们还设计了一个特征过滤门，可以更好地融合和过滤多个专家模块的信息。(2) 为了解决第二个问题，我们从最近的对比学习模型[13]中得到启发，提出了一个解决方案。我们的模型将对比学习应用于英语仇恨言论检测，使用脏话词典和身份术语词典来构建正反实例。这一结果使模型对关键词语更加敏感，从而可以学习各类仇恨词语或身份术语词语与攻击性语句之间的关联。总之，我们的研究有以下贡献：</p>
+<ul>
+<li>为了更好地研究仇恨信息和情感信息之间的相互作用，我们提出了一种更适合仇恨言论检测的 MTL 模型，该模型使用共享专家和特定任务专家来提取特征，最后使用特征过滤门来融合特征。</li>
+<li>鉴于之前的工作中缺乏对重要词语信息的使用，我们在预训练模型中引入了对比学习，使我们的模型能够更好地识别文本中的关键词。</li>
+<li>在三个基准数据集上的实验结果表明，我们的模型在仇恨言论检测方面非常有效。</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><!-- ![model](https://www.mdpi.com/mathematics/mathematics-10-04706/article_deploy/html/images/mathematics-10-04706-g002.png) -->
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<div align=center>
+<img src="https://www.mdpi.com/mathematics/mathematics-10-04706/article_deploy/html/images/mathematics-10-04706-g002.png" width="85%" height="85%" />
+</div>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>本节将介绍我们的仇恨言论检测关键字增强多专家框架模型（KMT）。该模型利用句子的关键信息和外部情感信息来改进仇恨言论检测。<br>KMT 的总体架构如图 2 所示。该框架由四个模块组成：<strong>（1）文本输入模块。</strong>图中底部显示的是文本输入模块，该模块使用预训练模型 BERT 或 HateBERT 对输入句子进行编码，并生成上下文和语义整合的输入向量 x；<strong>（2）多任务学习模块。</strong>图中左上方为多任务学习模块，我们利用多任务学习框架将情感信息和仇恨信息进行交互，学习共享特征和特定任务特征，利用情感信息辅助仇恨言论检测；<strong>（3）特征过滤模块。</strong>图中门为特征过滤模块，用于对专家模块输出的特征进行过滤和融合，筛选出重要的情感信息和仇恨言论信息；（4）对比学习模块。图中右上方为对比学习模块，用于提取句子中的关键信息，提高模型对句子关键词的敏感度。最后，对 MTL 模块和对比学习模块进行联合训练。</p>
 ]]></content>
+      <categories>
+        <category>【我的论文】</category>
+      </categories>
+      <tags>
+        <tag>Hate Speech Detection</tag>
+      </tags>
   </entry>
   <entry>
-    <title>联系我</title>
-    <url>/2022/10/14/newpage/</url>
-    <content><![CDATA[<p>欢迎来到我的第一条blog！<br>Welcome to my first blog!</p>
-<h2 id="你可以这样联系我"><a href="#你可以这样联系我" class="headerlink" title="你可以这样联系我"></a>你可以这样联系我</h2><p>E-Mail：<a href="mailto:&#x73;&#99;&#110;&#x75;&#95;&#119;&#113;&#102;&#x40;&#109;&#x2e;&#x73;&#x63;&#x6e;&#x75;&#46;&#101;&#x64;&#x75;&#x2e;&#x63;&#110;">&#x73;&#99;&#110;&#x75;&#95;&#119;&#113;&#102;&#x40;&#109;&#x2e;&#x73;&#x63;&#x6e;&#x75;&#46;&#101;&#x64;&#x75;&#x2e;&#x63;&#110;</a><br>CSDN: <a href="https://blog.csdn.net/Jorffy?type=blog">https://blog.csdn.net/Jorffy?type=blog</a></p>
-]]></content>
+    <title>【论文分享】基于可学习图增强的邻居监督图对比学习</title>
+    <url>/2023/09/08/NCLA/</url>
+    <content><![CDATA[<h2 id="论文信息"><a href="#论文信息" class="headerlink" title="论文信息"></a>论文信息</h2><p>论文下载：<a href="https://ojs.aaai.org/index.php/AAAI/article/view/26168">Neighbor Contrastive Learning on Learnable Graph Augmentation</a><br>标题：基于可学习图增强的邻居监督图对比学习<br>作者：Xiao Shen（海南大学）, Dewang Sun, Shirui Pan, Xi Zhou, Laurence T. Yang<br>发表地点：AAAI 2023<br>代码开源：<a href="https://github.com/shenxiaocam/NCLA">https://github.com/shenxiaocam/NCLA</a></p>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>近年来，旨在从未标记的图中学习表示的图对比学习（GCL）取得了长足的进步。然而，现有的GCL方法大多采用人工设计的图增强，对各种图数据集都很敏感。此外，最初在计算机视觉中产生的对比损失已直接应用于图形数据，其中相邻节点被视为负值，因此与锚点相距很远。然而，这与网络的同质假设相矛盾，即连接的节点通常属于同一类，并且应该彼此靠近。在这项工作中，我们提出了一种名为NCLA的端到端自动GCL方法，用于将邻居对比学习应用于可学习图增强。多头图注意力机制自动学习多个自适应拓扑图增强视图，无需先验领域知识即可兼容各种图数据集。此外，通过将网络拓扑作为监督信号，设计了邻域对比损失，以允许每个锚点具有多个正信号。在拟议的 NCLA 中，增强和嵌入都是端到端学习的。在基准数据集上的大量实验表明，当标签极其有限时，NCLA在自监督GCL上产生了最先进的节点分类性能，甚至超过了监督节点。我们的代码在 <a href="https://github.com/shenxiaocam/NCLA">https://github.com/shenxiaocam/NCLA</a> 上发布。</p>
+<span id="more"></span>
+
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在过去几年中，图神经网络（GNN）因其在节点分类（Kipf 和 Welling，2017 年）、链接预测（Shen 和 Chung，2020 年）和图分类等各种图挖掘任务中的出色表现而备受关注（Hamilton, Ying 和 Leskovec 2017）。现有的大多数 GNN 都是以监督的方式进行训练的，这在很大程度上依赖于大量注释良好的标签。然而，在现实世界的应用中，收集大量带标签的图结构数据往往需要耗费大量资源和时间（Shen 等人，2020a；Shen 等人，2020b；Shen、Mao 和 Chung，2020；Wu 等人，2020；Dai 等人，2022）。</p>
+<p>对比学习（Contrastive Learning，CL）是最具代表性的自监督学习技术之一，可以减少对人工标签的依赖。对比学习在计算机视觉（CV）（Zhu 等人，2020 年）和自然语言处理（NLP）（Aberdam 等人，2021 年）的无监督表示学习中表现出了前所未有的性能。最近，在图对比学习（GCL）（Hassani 和 Khasahmadi，2020 年；Zhu 等人，2020 年；Xia 等人，2022a；Xia 等人，2022b；Zheng 等人，2022 年）的发展启发下，人们投入了巨大的努力，将 GNN 与 CL 结合起来，从无标签图中学习稳健的表示。</p>
+<p>现有的 GCL 方法大多采用类似的模式。首先，它们采用各种图增强策略，如节点丢弃（You 等人，2020 年）、边扰动（Zhu 等人，2020 年）、属性掩蔽（Zhu 等人，2021 年）、子图（Yang 等人，2022 年）和图扩散（Hassani 和 Khasahmadi，2020 年），生成多个具有差异的图增强视图。其次，他们应用了 CV 中广泛使用的对比损失，如 InfoNCE（Van den Oord、Li 和 Vinyals，2018 年）、归一化温度标度交叉熵（NT-Xent）（Zhu et al. 2020）、Jensen-Shannon Divergence（JSD）（Nowozin、Cseke 和 Tomioka，2016）和 Triplet loss（Schroff、Kalenichenko 和 Philbin，2015）等，根据 InfoMax（Linsker，1988）原理提取不同增强视图之间的共同核心信息。尽管 GCL 得到了蓬勃发展，但标准范式在图增强和对比目标方面仍存在一些缺陷。</p>
+<p>CL的理论和实证分析表明，好的增强视图应该是多样化的，同时保持与任务相关的信息完好无损（Tian等人，2020）。然而，现有的手工图增强策略会随机扰动图拓扑结构，无法保持任务相关信息的完整性。例如，丢弃一条重要的边会严重破坏与下游任务高度相关的图拓扑结构，从而导致图嵌入质量低下（Zhu 等，2021）。此外，由于图数据的多样性，目前还没有适用于不同数据集的通用图增强技术（You 等人，2020 年；You 等人，2021 年）。因此，现有的临时图增强方法必须根据先前的领域知识或反复试验为每个图数据集手动选择（You 等人，2020 年），这大大限制了现有 GCL 方法的效率和普遍适用性。</p>
+<div align=center>
+<img src="/../images/NCLA/Fig1_3cl.jpg" width="95%" height="95%" />
+</div>
+
+<p>另一方面，现有的 GCL 方法直接将最初在 CV 中提出的对比损失应用于图形数据（Qiu 等人，2020 年；You 等人，2020 年；Zhu 等人，2020 年；Wan 等人，2021a；Wan 等人，2021b；Zhu 等人，2021 年），而不注意图像与图形之间的内在区别。对比损失被用来指导表征学习，将正对图像拉到一起，将负对图像推开。如图 1(a)和 1(b)所示，在 InfoNCE 和 NT-Xent 中，通过创建同一节点的不同增强视图，每个锚点都会形成一对正对。然后，InfoNCE 将来自不同视图的所有其他不同节点视为负节点。而 NTXent 则引入了更多的否定，将一个视图内和来自不同视图的所有不同节点都视为否定。值得注意的是，在 InfoNCE 和 NT-Xent 中，相邻节点都被视为负节点，然后被推离锚点。然而，在 GCL 中，与 CL 相结合的 GNN 通常基于同类假设，即相连节点通常属于同一类别（McPherson、Smith-Lovin 和 Cook，2001 年）。换句话说，连接的节点应该彼此相似，而不是相距甚远。由于图像和图形之间的内在区别，直接将 CV 中开发的对比损失应用于 GCL 会忽略网络拓扑结构，导致嵌入结果与 GNN 的同类假设相矛盾。</p>
+<p>为了弥补上述局限，我们在这项工作中提出了一种新的 GCL 方法，命名为 NCLA，它将邻接对比学习应用于可学习图增强。一方面，NCLA 采用多头图注意网络（GAT）（Veličković 等人，2018 年）生成具有自适应拓扑的 K 个可学习图增强视图。这种可学习的增强可以自动兼容各种图数据集，而无需事先了解领域知识。此外，与可能严重破坏原始拓扑的不恰当手工图增强相比，NCLA 生成的基于注意力的可学习增强视图将保留与原始图完全相同的节点和边，但具有不同的自适应边权重。此外，现有的 GCL 方法对不同的增强视图使用完全相同的 GNN 编码器和绑定的可学习参数（You 等人，2020 年；Zhu 等人，2020 年；Zhu 等人，2021 年），而在 NCLA 中，每个增强视图都有自己的可学习参数。因此，NCLA 可以生成更安全的图增强，而无需对原始拓扑进行不当修改，同时还能保证不同增强视图之间的多样性。另一方面，与之前直接利用最初在 CV 中提出的对比损失（如 InfoNCE 或 NT-Xent）的 GCL 方法不同，我们为节点-节点 GCL 设计了一种新的邻居对比损失。所提出的邻居对比损失是对 NT-Xent 损失（Zhu 等人，2020 年）的新扩展，它将网络拓扑作为监督信号来定义 GCL 中的正负。具体地说，与 NT-Xent 中每个锚点只能形成一对正值不同，所提出的邻居对比损失允许每个锚点有多个正值。如图 1(c)所示，这些多个正对来自不同视图中的同一节点，以及锚点在同一视图中的邻居和来自不同视图的邻居。因此，视图内和不同视图中锚点的非邻居将被视为视图内和视图间的阴性。这项工作的贡献可总结如下：</p>
+<ul>
+<li>与大多数现有的 GCL 方法必须根据数据集手动挑选手工图增强相比，所提出的 NCLA 首次采用了多头图注意力机制作为可学习的图增强函数，其中每个头对应一个增强视图。这种基于注意力的可学习图增强避免了对原始拓扑结构的不当修改，并能自动兼容各种图数据集。</li>
+<li>现有的 GCL 方法直接将 CV 中的对比损失应用于图形数据，忽略了网络拓扑结构。CV 中的损失来处理图数据，而忽略了网络拓扑结构。据我们所知，我们的工作是 在节点-节点 GCL 中研究邻接对比学习的开创性尝试之一。通过将网络拓扑结构作为监督信号，允许每个锚点出现多个阳性结果。</li>
+<li>在标准的 GCL 范式中，图增强和嵌入学习分两个阶段进行，可能需要进行双层优化。相比之下，在 NCLA 中，图形增强与嵌入学习是端到端的，因此具有很高的灵活性和易用性。</li>
+<li>在各种图数据集上进行的大量实验表明，NCLA 在使用稀缺标签进行半监督节点分类时，始终优于最先进的 GCL 方法，甚至优于某些监督 GNN。</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><div align=center>
+<img src="/../images/NCLA/Fig2_model.jpg" width="95%" height="95%" />
+</div>]]></content>
+      <categories>
+        <category>【论文分享】</category>
+      </categories>
+      <tags>
+        <tag>Contrastive Learning</tag>
+        <tag>Graph</tag>
+      </tags>
   </entry>
   <entry>
     <title>【阅读笔记】多模态嘲讽检测模型汇总</title>
@@ -260,8 +222,46 @@
         <category>【阅读笔记】</category>
       </categories>
       <tags>
-        <tag>Sarcasm Detection</tag>
         <tag>MultiModal</tag>
+        <tag>Sarcasm Detection</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>【论文分享】嘲讽检测综述</title>
+    <url>/2023/07/07/SDtasks_survey/</url>
+    <content><![CDATA[<h2 id="论文信息"><a href="#论文信息" class="headerlink" title="论文信息"></a>论文信息</h2><p>论文下载：<a href="https://arxiv.org/abs/2202.02516">A SURVEY ON AUTOMATED SARCASM DETECTION ON TWITTER</a><br>标题：基于 Twitter 的嘲讽检测论文调查<br>作者：Bleau Moores, Vijay Mago<br>发表地点：A PREPRINT in Arxiv（预印版）</p>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>自动嘲讽检测是计算机科学中一个不断发展的领域。短文信息越来越多地被用于交流，尤其是在 Twitter 等社交媒体平台上。由于语境不足或缺失，这些信息中未识别的嘲讽会颠倒语句的含义，导致混乱和交流失败。本文介绍了当前用于嘲讽检测的各种方法，包括通过上下文、发帖历史和机器学习模型进行检测。此外，还可以观察到向深度学习方法的转变，这可能是由于使用具有诱导特征而非离散特征的模型与变压器的创新相结合所带来的好处。</p>
+]]></content>
+      <categories>
+        <category>【论文分享】</category>
+      </categories>
+      <tags>
+        <tag>Sarcasm Detection</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/10/01/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>联系我</title>
+    <url>/2022/10/14/newpage/</url>
+    <content><![CDATA[<p>欢迎来到我的第一条blog！<br>Welcome to my first blog!</p>
+<h2 id="你可以这样联系我"><a href="#你可以这样联系我" class="headerlink" title="你可以这样联系我"></a>你可以这样联系我</h2><p>E-Mail：<a href="mailto:&#x73;&#99;&#x6e;&#x75;&#x5f;&#x77;&#113;&#102;&#x40;&#109;&#46;&#115;&#99;&#x6e;&#117;&#46;&#x65;&#x64;&#x75;&#46;&#99;&#110;">&#x73;&#99;&#x6e;&#x75;&#x5f;&#x77;&#113;&#102;&#x40;&#109;&#46;&#115;&#99;&#x6e;&#117;&#46;&#x65;&#x64;&#x75;&#46;&#99;&#110;</a><br>CSDN: <a href="https://blog.csdn.net/Jorffy?type=blog">https://blog.csdn.net/Jorffy?type=blog</a></p>
+]]></content>
   </entry>
 </search>
